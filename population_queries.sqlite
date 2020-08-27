@@ -1,0 +1,15 @@
+-- This is the first query:
+
+SELECT DISTINCT year from population_years;
+
+-- Add your additional queries below:
+
+Select max(population) from population_years where country = 'Gabon';
+
+Select population from population_years where year = 2005 order by 1 limit 10;
+
+Select distinct country from population_years where population > 100 and year = 2010;
+
+Select count(*) as countries_with_island_in_name from population_years where country like '%islands%';
+
+Select p2-p1 as population_difference from (Select population as p1 from population_years where country = 'Indonesia' and year = 2000), (Select population as p2 from population_years where country = 'Indonesia' and year = 2010);
